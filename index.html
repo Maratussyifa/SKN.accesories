@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKN.accesories | Toko Aksesoris Online</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #ff85a2;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .middle {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .search-box input {
+            padding: 5px;
+            width: 250px;
+        }
+        .header-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        .container {
+            padding: 20px;
+            background-color: #ffe6f0;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .product {
+            display: inline-block;
+            width: 200px;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #ffb3c6;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .description {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px;
+            background-color:#5499d2;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }        
+        .button:hover {
+            background-color: #5499d2;;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 10px;
+            background-color: #8bc34a;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-button:hover {
+            background-color: #689f38;
+        }
+        .address {
+            color: #5499d2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <img class="header-img" src="https://png.pngtree.com/png-clipart/20230926/original/pngtree-childrens-jewelry-set-whimsical-cartoon-drawings-of-accessories-for-kids-with-png-image_12881350.png" alt="Aksesoris Anak">
+
+    <div class="navbar">
+        <h2>SKN.accesories</h2>
+        <div class="middle">
+            <div class="search-box">
+                <input type="text" id="search" onkeyup="searchProduct()" placeholder="Cari produk...">
+            </div>
+            <a href="https://wa.me/6282115257106" class="wa-button">📲 Hubungi WA</a>
+            <a href="#" class="address-button" onclick="showAddress()">📍 Lihat Alamat</a>
+            <a href="keranjang.html" class="button" onclick="saveCart()">🛒 Keranjang (<span id="cart-count">0</span>) - Rp <span id="cart-total-button">0</span></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Toko Aksesoris Online</h3>
+        <p>Rating: ⭐ 4.5/5 </p>
+    </div>
+    <div class="container">
+        <h2>Selamat Datang di SKN.accesories</h2>
+        <p>Temukan berbagai aksesoris unik dan lucu yang cocok untuk melengkapi gaya Anda!</p>
+
+    <div class="product-list">
+        <div class="product" data-name="Plastik PolyMailer">
+            <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98s-lo0ye3abxpbw35" alt="Plastik PolyMailers">
+            <h4>Plastik PolyMailer</h4>
+            <p class="description">Solusi pengemasan aman dan tahan air untuk barang Anda!</p>
+            <p>Harga: Rp 3.000</p>
+            <button class="button" onclick="addToCart('Plastik PolyMailer', 3000)">🛒 Masukkan Keranjang</button>
+        </div>
+
+        <div class="product" data-name="Kotak Plastik Mini">
+            <img src="https://cf.shopee.co.id/file/8e897b2b494da9a2d09343eaba2940f1" alt="Kotak Plastik Mini">
+            <h4>Kotak Plastik Mini</h4>
+            <p class="description">Kotak mungil serbaguna untuk menyimpan pernak-pernik Anda!</p>
+            <p>Harga: Rp 10.000</p>
+            <button class="button" onclick="addToCart('Kotak Pensil Mini', 10000)">🛒 Masukkan Keranjang</button>
+        </div>
+
+        <div class="product" data-name="Gelang">
+            <img src="https://down-id.img.susercontent.com/file/sg-11134201-22110-o8n5yxrohikv40" alt="Gelang">
+            <h4>Gelang</h4>
+            <p class="description">Aksesori manis untuk melengkapi gaya Anda.</p>
+            <p>Harga: Rp 7.000</p>
+            <button class="button" onclick="addToCart('Gelang', 7000)">🛒 Masukkan Keranjang</button>
+        </div>
+
+        <div class="product" data-name="Gantungan Kunci">
+            <img src="https://cf.shopee.co.id/file/22376938e38c740bf4192f50821694ec_tn" alt="Gantungan Kunci">
+            <h4>Gantungan Kunci</h4>
+            <p class="description">Jadikan kunci Anda lebih stylish dengan gantungan kunci unik ini!!</p>
+            <p>Harga: Rp 8.000</p>
+            <button class="button" onclick="addToCart('Gantungan Kunci', 8000)">🛒 Masukkan Keranjang</button>
+        </div>
+
+        <div class="product" data-name="Cincin Lucu">
+            <img src="https://down-id.img.susercontent.com/file/sg-11134201-22110-u6zq2fp7y6jv15" alt="Cincin Lucu">
+            <h4>Cincin Lucu</h4>
+            <p class="description">Cincin unik untuk melengkapi gaya harianmu!</p>
+            <p>Harga: Rp 5.000</p>
+            <button class="button" onclick="addToCart('Cincin Lucu', 5000)">🛒 Masukkan Keranjang</button>
+        </div>
+
+        <div class="product" data-name="Anting">
+            <img src="https://down-id.img.susercontent.com/file/c3ea961a2d1867f9d6c237d34f5953bf" alt="Anting">
+            <h4>Anting</h4>
+            <p class="description"> Anting ini simpel, elegan, dan menggemaskan.!</p>
+            <p>Harga: Rp 12.000</p>
+            <button class="button" onclick="addToCart('Anting', 12000)">🛒 Masukkan Keranjang</button>
+        </div>
+
+        <div class="product" data-name="Tas Gemas">
+            <img src="https://down-id.img.susercontent.com/file/sg-11134201-22120-9u8mjcc02qkv44" alt="Tas Gemas">
+            <h4>Tas Gemas</h4>
+            <p class="description">Tas kecil yang stylish dan cocok untuk anak-anak!</p>
+            <p>Harga: Rp 25.000</p>
+            <button class="button" onclick="addToCart('Tas Gemas', 25000)">🛒 Masukkan Keranjang</button>
+        </div>
+        <div class="product" data-name="Gelas karakter">
+            <img src="https://down-id.img.susercontent.com/file/e55ad0226045d92d73547784b005d738" alt="Gelas karakter">
+            <h4>Gelas karakter</h4>
+            <p class="description">Minum lebih menyenangkan dengan gelas karakter favorit Anda!</p>
+            <p>Harga: Rp 15.000</p>
+            <button class="button" onclick="addToCart('Gelas Karakter', 15000)">🛒 Masukkan Keranjang</button>
+    </div>
+
+        <div class="product" data-name="scrunchie" data-price="6000">
+            <img src="https://th.bing.com/th/id/OIP.bjt-mBPWVtA7NDU-cCD08wHaHa?rs=1&pid=ImgDetMain" alt="scrunchie">
+            <h4>Hair Clip</h4>
+            <p class="description">Ikat rambut elastis dengan berbagai warna ceria!</p>
+            <p>Harga: Rp 6.000</p>
+            <button class="button" onclick="addToCart('scrunchie', 6000)">🛒 Masukkan Keranjang</button>
+        </div>
+    </div>
+
+    <p id="address" style="display:none;">Alamat: Jl. Contoh No. 123, Kota Anda</p>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        function searchProduct() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let products = document.querySelectorAll(".product");
+            products.forEach(product => {
+                let name = product.getAttribute("data-name").toLowerCase();
+                product.style.display = name.includes(input) ? "inline-block" : "none";
+            });
+        }
+        
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCart();
+        }
+        
+        function updateCart() {
+            let cartCount = document.getElementById("cart-count");
+            let cartTotalButton = document.getElementById("cart-total-button");
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartCount.textContent = cart.length;
+            cartTotalButton.textContent = total;
+        }
+        
+        function saveCart() {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+        
+        function showAddress() {
+            document.getElementById("address").style.display = "block";
+        }
+
+        updateCart();
+    </script>
+</body>
+</html>
