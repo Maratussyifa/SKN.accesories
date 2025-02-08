@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            padding: 20px;
+            background-color: #ffe4e1;
+            border-radius: 10px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cart-item button:hover {
+            background-color: #d75194;
+        }
+        .total {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .checkout-button {
+            display: inline-block;
+            padding: 10px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .checkout-button:hover {
+            background-color: #1da851;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Keranjang Belanja</h2>
+        <div id="cart-items"></div>
+        <p class="total">Total: Rp <span id="cart-total">0</span></p>
+        <a href="#" class="checkout-button">🛒 Checkout</a>
+    </div>
+    
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        function displayCart() {
+            let cartItems = document.getElementById("cart-items");
+            let cartTotal = document.getElementById("cart-total");
+            cartItems.innerHTML = "";
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                let cartItem = document.createElement("div");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <span>${item.name} - Rp ${item.price}</span>
+                    <button onclick="removeFromCart(${index})">❌ Hapus</button>
+                `;
+                cartItems.appendChild(cartItem);
+                total += item.price;
+            });
+            
+            cartTotal.textContent = total;
+        }
+        
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        }
+        
+        displayCart();
+    </script>
+</body>
+</html>
