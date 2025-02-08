@@ -58,7 +58,7 @@
         .button {
             display: inline-block;
             padding: 10px;
-            background-color:#5499d2;
+            background-color: #ff6699;
             color: white;
             text-decoration: none;
             margin-top: 10px;
@@ -85,6 +85,7 @@
             color: #5499d2;
             font-weight: bold;
         }
+        
     </style>
 </head>
 <body>
@@ -97,7 +98,7 @@
                 <input type="text" id="search" onkeyup="searchProduct()" placeholder="Cari produk...">
             </div>
             <a href="https://wa.me/6282115257106" class="wa-button">📲 Hubungi WA</a>
-            <a href="#" class="address-button" onclick="showAddress()">📍 Lihat Alamat</a>
+            <a href="alamat.html" class="address-button" onclick="showAddress()">📍 Lihat Alamat</a>
             <a href="keranjang.html" class="button" onclick="saveCart()">🛒 Keranjang (<span id="cart-count">0</span>) - Rp <span id="cart-total-button">0</span></a>
         </div>
     </div>
@@ -220,6 +221,15 @@
         }
 
         updateCart();
+        
+    
+</script>
+<button class="address-button" onclick="openAlamat()">📍 Alamat</button>
+
+<script>
+    function openAlamat() {
+        window.location.href = 'alamat.html';
+    }
     </script>
 </body>
 </html>

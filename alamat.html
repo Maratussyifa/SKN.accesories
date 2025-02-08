@@ -8,44 +8,63 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f8ff;
             padding: 20px;
+            background-color: #f9f9f9;
         }
         .container {
-            background-color: white;
+            max-width: 600px;
+            margin: auto;
+            background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
         }
-        h2 {
-            color: #2196f3;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
+        .map-container {
             margin-top: 20px;
-            background-color: #ff85a2;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #2196f3;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 10px;
             cursor: pointer;
         }
-        .back-button:hover {
-            background-color: #ff6699;
+        .button:hover {
+            background-color: #1976d2;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h2>Alamat Kami</h2>
-        <p><strong>SKN Accessories</strong></p>
-        <p>Jl.Danau Ranau. Kota Malang, Indonesia</p>
-        <p>Kode Pos: 12345</p>
-        <p>Telepon: 082115257106</p>
-        <a href="https://www.bing.com/maps?&ty=0&rtp=pos.-7.981833_112.656731__Kedungkandang%2C%2065138%2C%20Indonesia__s_~pos.-7.975268_112.657489_Jalan%20Danau%20Maninjau%20Raya%20No.%2059%2C%20Kedungkandang%2C%20Kota%20Malang%2C%20East%20Java%2065139%2C%20Indonesia___e_&mode=d&sri=0&u=1&tt=Kedungkandang%2C%2065138%2C%20Indonesia%20to%20Jalan%20Danau%20Maninjau%20Raya%20No.%2059%2C%20Kedungkandang%2C%20Kota%20Malang%2C%20East%20Java%2065139%2C%20Indonesia&tsts0=%2526ty%253D0%2526rtp%253Dpos.-7.981833_112.656731__Kedungkandang%25252C%25252065138%25252C%252520Indonesia__s_~pos.-7.975268_112.657489_Jalan%252520Danau%252520Maninjau%252520Raya%252520No.%25252059%25252C%252520Kedungkandang%25252C%252520Kota%252520Malang%25252C%252520East%252520Java%25252065139%25252C%252520Indonesia___e_%2526mode%253Dd%2526sri%253D0%2526u%253D1&tstt0=Kedungkandang%2C%2065138%2C%20Indonesia%20to%20Jalan%20Danau%20Maninjau%20Raya%20No.%2059%2C%20Kedungkandang%2C%20Kota%20Malang%2C%20East%20Java%2065139%2C%20Indonesia&cp=-7.977382~112.62984&lvl=15.8311&pi=0&ftst=0&ftics=False&v=2&sV=2&form=S00027" target="_blank" class="map-link">📍 Lihat di Google Maps</a>
-        <br>
-        <a href="index.html" class="back-button">🔙 Kembali</a>
+        <h2>📍 Alamat Kami</h2>
+        <p>Jl. Danau Ranau, Malang</p>
+        <p>Buka setiap hari: 09.00 - 21.00 WIB</p>
+        
+        <!-- Tombol buka Google Maps -->
+        <a href="https://www.google.com/maps?q=-7.981833,112.656731" target="_blank" class="button">
+            🌍 Lihat di Google Maps
+        </a>
+
+        <div class="map-container">
+            <!-- Google Maps Embed -->
+            <iframe 
+                width="100%" 
+                height="300" 
+                style="border:0" 
+                loading="lazy"
+                allowfullscreen 
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.169813060695!2d112.656731!3d-7.981833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd629c28cfed3e5%3A0x64bb0cbb8b82b7e5!2sJl.%20Danau%20Ranau%2C%20Malang!5e0!3m2!1sid!2sid!4v1707312345678">
+            </iframe>
+        </div>
+
+        <!-- Tombol kembali ke halaman utama -->
+        <button class="button" onclick="window.location.href='index.html'">⬅️ Kembali</button>
     </div>
+
 </body>
 </html>
